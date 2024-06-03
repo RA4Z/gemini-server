@@ -11,6 +11,7 @@ path_weekly = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secret
 path_monthly = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secretary/monthly'
 path_rules = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/rules'
 path_procedures = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/general_procedures'
+path_docs = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/documents'
 
 agendaPCP = json.load(open('agenda.json', 'r', encoding='utf-8'))
 
@@ -41,6 +42,22 @@ for filename in os.listdir(path_rules):
             "role": "user",
             "parts": [
                 f"Texto em extenso para a Norma {filename.replace('.docx','')}"
+            ]
+        })
+        historico.append({
+            "role": "model",
+            "parts": [
+                data.extrair_procedimento(f'{path_rules}/{filename}'),
+            ]
+        })
+
+#DOCUMENTOS PCP
+for filename in os.listdir(path_docs):
+    if filename.endswith(".docx"):
+        historico.append({
+            "role": "user",
+            "parts": [
+                f"Documento em extenso sobre {filename.replace('.docx','')}"
             ]
         })
         historico.append({
