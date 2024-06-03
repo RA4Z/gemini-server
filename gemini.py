@@ -49,7 +49,7 @@ class GeminiAI():
       history= historico
     )
   
-  def send_message(self, message):
+  def send_message(self, message:str):
     message = f"""
     Reponda a pergunta a seguir no idioma no qual foi perguntado - {message} - Responda a essa pergunta seguindo o contexto do PCP da WEG energia, 
     Caso seja questionado segue algumas informações importantes:
