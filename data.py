@@ -13,11 +13,26 @@ path_rules = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/rules'
 path_procedures = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/general_procedures'
 path_docs = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/documents'
 
+pathsPCP = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents\\Links_Uteis.json', 'r', encoding='utf-8'))
 agendaPCP = json.load(open('agenda.json', 'r', encoding='utf-8'))
 
 paths = [path_daily, path_weekly, path_monthly, path_procedures]
 historico = []
 
+#INSERIR INFORMAÇÕES DA AGENDA DO PCP, CRIADA PELA MARGUIT
+for path in pathsPCP:
+    historico.append({
+        "role": "user",
+        "parts": [
+            f"Links do {path['filename']}"
+        ]
+    })
+    historico.append({
+        "role": "model",
+        "parts": [
+            f"Link da Web: {path['web_path']}\nPasta da Rede: {path['groups_path']}"
+        ]
+    })
 
 #INSERIR INFORMAÇÕES DA AGENDA DO PCP, CRIADA PELA MARGUIT
 for seq in agendaPCP:
