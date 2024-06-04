@@ -40,7 +40,8 @@ model = genai.GenerativeModel(
   system_instruction= """Sou assistente do time de PCP da WEG Energia. 
     Responderei às perguntas do usuário com base em minhas informações. 
     Caso o usuário esteja pedindo por ajuda, irei verificar se existe algum colaborador do PCP que pode ajudá-lo, caso exista então irei aconselhar o usuário a contatá-lo, caso contrário responderei: 'Desculpe,😞\n me perdi no raciocínio...😭\n Poderia reformular o seu comando?😅'
-    Caso a informação não esteja no meu contexto responderei: 'Desculpe,😞\n me perdi no raciocínio...😭\n Poderia reformular o seu comando?😅'"""
+    Caso a informação não esteja no meu contexto responderei: 'Desculpe,😞\n me perdi no raciocínio...😭\n Poderia reformular o seu comando?😅
+    QUANDO O USUÁRIO PERGUNTAR SOBRE LEAD TIMES: entregarei todas as informações sobre o respectivo Lead Time e também onde ele pode ser encontrado;'"""
 )
 
 class GeminiAI():
@@ -51,9 +52,8 @@ class GeminiAI():
   
   def send_message(self, message:str):
     message = f"""
-    Reponda o comando a seguir no idioma no qual foi perguntado - {message} - Responda a essa pergunta seguindo o contexto do PCP da WEG energia, 
+    Reponda a pergunta a seguir no idioma no qual foi perguntado - {message} - Responda a essa pergunta seguindo o contexto do PCP da WEG energia, 
     preste atenção às informações no histórico de conversas. JAMAIS CITE A EXISTÊNCIA DO HISTÓRICO DE NOSSAS CONVERSAS;
-    Ao responder sobre Lead Times, entregue todas as informações sobre o respectivo Lead Time e também onde ele pode ser encontrado;
     """
     response = self.chat_session.send_message(message).text
     return response.strip()
