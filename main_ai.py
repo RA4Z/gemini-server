@@ -1,4 +1,4 @@
-from gemini import GeminiAI
+from gemini_chatbot import GeminiAI
 from functions import input_history
 from flask import Flask, request
 

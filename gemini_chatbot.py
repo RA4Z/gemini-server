@@ -1,7 +1,5 @@
 import google.generativeai as genai
-from data import historico
-from datetime import date
-from functions import ultimo_dia_util
+from chatbot_data import historico
 import os
 
 genai.configure(api_key=os.environ['GEMINI_API_KEY'].strip())

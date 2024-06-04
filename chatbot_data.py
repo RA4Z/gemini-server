@@ -1,9 +1,6 @@
 from extract import Dados
-from rotinas import run_all
 import json
 import os
-
-run_all()
 
 data = Dados()
 path_daily = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secretary/daily'
