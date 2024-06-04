@@ -51,9 +51,7 @@ class GeminiAI():
   
   def send_message(self, message:str):
     message = f"""
-    Reponda a pergunta a seguir no idioma no qual foi perguntado - {message} - Responda a essa pergunta seguindo o contexto do PCP da WEG energia, 
-    Caso seja questionado segue algumas informações importantes:
-    O último dia útil é {ultimo_dia_util}; O dia de hoje é {date.today()}
+    Reponda o comando a seguir no idioma no qual foi perguntado - {message} - Responda a essa pergunta seguindo o contexto do PCP da WEG energia, 
     preste atenção às informações no histórico de conversas. JAMAIS CITE A EXISTÊNCIA DO HISTÓRICO DE NOSSAS CONVERSAS;
     Ao responder sobre Lead Times, entregue todas as informações sobre o respectivo Lead Time e também onde ele pode ser encontrado;
     """
