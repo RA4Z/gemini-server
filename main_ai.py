@@ -1,4 +1,5 @@
 from gemini_chatbot import GeminiAI
+from gemini_search_folders import SearchFoldersAI
 from functions import input_history
 from flask import Flask, request
 
@@ -43,6 +44,17 @@ def quit_system():
 
   return 'Usuário inexistente'
 
+@app.route('/search', methods=['POST'])
+def search_file():
+  search = SearchFoldersAI()
+  message = request.form.get('message')
+
+  if message:
+    response = search.send_message(message)
+    return response
+  
+  else:
+    return "Mensagem inválida", 400
   
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=5000)

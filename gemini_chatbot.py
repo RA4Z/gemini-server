@@ -1,5 +1,5 @@
 import google.generativeai as genai
-from chatbot_data import historico
+from data_chatbot import historico
 import os
 
 genai.configure(api_key=os.environ['GEMINI_API_KEY'].strip())
