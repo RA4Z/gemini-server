@@ -49,7 +49,7 @@ class SearchFoldersAI():
     message = f"""{arquivos}
     Ordene os tópicos de acordo com o número de seu Score, de maior para menor;
     Faça essa análise se baseando na descrição a seguir: {descricao};
-    Analisando todos os arquivos acima quero que crie um ranking dos 5 arquivos que mais tem relação com a descrição desejada;
+    Analisando todos os arquivos acima quero que crie um ranking dos 5 arquivos que mais tem relação com a descrição desejada (NÃO MOSTRE NADA ALÉM DESSES 5 ARQUIVOS);
 
     Faça essa análise se baseando nos critérios de avaliação abaixo:
     - O nome das pastas que os arquivos se encontram tem relação com a descrição passada como parâmetro? (score máximo: 30/100);
