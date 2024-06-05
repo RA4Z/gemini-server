@@ -71,11 +71,10 @@ class SecretaryAI():
         Quando aparecer escrito o texto "SEM_PASSADO", substitua por {str(int(date.today().strftime('%m'))-1).zfill(2)};
         Formate as datas de 'LastUpdate' dos indicadores em formato de 'dd/mm/yyyy', mantendo a data que se encontra na base de dados.
         Separe o passo a passo para atualizar o indicador em vários tópicos, não fazendo uso de subtópicos, deve estar escrito <topico> na frente de cada tópico;
-        Crie um resumo sobre o indicador, também informando a última data de atualização do mesmo e se ele está com o status Pendente ou Realizado;
 
         Quando aparecer 'Encaminhar EMAIL (', então colocar no mesmo tópico todo o texto até aparecer o ), semelhante ao ultimo tópico de exemplo
-
-        Siga o modelo abaixo para o output:
+        SEPARE OS DADOS EM TÓPICOS, SEMPRE COLOCANDO <topico> ANTES DO TÓPICO, ISSO É ESSENCIAL;
+        Siga o modelo abaixo de TÓPICOS para o output:
         
         <topico> Abra o arquivo localizado na pasta Q:/GROUPS/... (Tópico opcional)
         <topico> Abra o SAP (Tópico opcional)
@@ -84,9 +83,6 @@ class SecretaryAI():
         <topico> Executar a transação (Tópico opcional)
         <topico> Copiar materiais e inserir no arquivo ... (Tópico opcional)
         <topico> Encaminhar EMAIL(Tópico opcional) ( | Title: ... | Body: ... | To (Campo opcional):... | Copy (Campo opcional):... | CCo (Campo opcional): ... | Attachments (Campo opcional): ... |)
-
-        Resumo do indicador...
-
     """
     response = self.chat_session.send_message(message).text.replace('**','')
     return response.strip()
