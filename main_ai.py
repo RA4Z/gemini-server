@@ -1,5 +1,7 @@
 from gemini_chatbot import GeminiAI
 from gemini_search_folders import SearchFoldersAI
+from gemini_secretary_prompt import SecretaryAI
+
 from functions import input_history
 from flask import Flask, request
 
@@ -51,6 +53,19 @@ def search_file():
 
   if message:
     response = search.send_message(message)
+    return response
+  
+  else:
+    return "Mensagem inválida", 400
+  
+@app.route('/secretary', methods=['POST'])
+def search_secretary_procedure():
+  search = SecretaryAI()
+  path = request.form.get('path')
+  filename = request.form.get('filename')
+
+  if filename:
+    response = search.send_message(path, filename)
     return response
   
   else:
