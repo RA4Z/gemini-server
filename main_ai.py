@@ -4,8 +4,10 @@ from gemini_secretary_prompt import SecretaryAI
 
 from functions import input_history
 from flask import Flask, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Dicionário para armazenar os objetos GeminiAI para cada usuário
 user_ias = {}
@@ -26,7 +28,7 @@ def process_message():
       input_history(username, message, response)
     except Exception as e:
       print(str(e))
-
+      
     return response
   else:
     return "Mensagem inválida", 400
