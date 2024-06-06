@@ -59,5 +59,5 @@ class GeminiAI():
 
 if __name__ == "__main__":
   ia = GeminiAI()
-  resumo = ia.send_message('Kanban Diário')
+  resumo = ia.send_message('Onde encontro o Procedimento para apontar uma ordem?')
   print(resumo)

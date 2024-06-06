@@ -7,8 +7,8 @@ path_daily = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secreta
 path_weekly = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secretary/weekly'
 path_monthly = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secretary/monthly'
 path_rules = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/rules'
-path_procedures = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/general_procedures'
 path_docs = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/documents'
+path_procedures = '\\\\intranet.weg.net@SSL\\DavWWWRoot\\br\\energia-wm\\pcp\\Central de Arquivos'
 
 pathsPCP = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents\\Links_Uteis.json', 'r', encoding='utf-8'))
 agendaPCP = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents\\agenda.json', 'r', encoding='utf-8'))
@@ -92,7 +92,7 @@ for path in paths:
             historico.append({
                 "role": "model",
                 "parts": [
-                    data.extrair_procedimento(f'{path}/{filename}'),
+                    f"{data.extrair_procedimento(f'{path}/{filename}')} o procedimento se encontra em {path}/{filename}",
                 ]
             })
 
