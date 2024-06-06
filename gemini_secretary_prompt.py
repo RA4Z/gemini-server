@@ -65,16 +65,17 @@ class SecretaryAI():
         {extrair_procedimento(f'{path}')}
         Fim do procedimento;
 
-        Baseado nas informações do acima, realize o comando abaixo:
+        Baseado nas informações do procedimento acima, realize os comandos abaixo:
 
-        Substitua "ANO_ATUAL" por {date.today().year}, 
-        Substitua "MES_ATUAL" por {date.today().month:02}, 
-        Substitua "SEMANA_ATUAL" por {date.today().isocalendar().week}, 
-        Substitua "ULTIMO_DIA_UTIL" por {ultimo_dia_util(date.today())}, 
-        Substitua "DIA_ATUAL" por {date.today().day:02}
-        Substitua "SEM_PASSADO" por {str(int(date.today().strftime('%m'))-1).zfill(2)};
+        FAÇA essas alterações com os textos entre aspas quando aparecerem no procedimento acima:
+        Caso esteja escrito "ANO_ATUAL" Substitua "ANO_ATUAL" por {date.today().year}, 
+        Caso esteja escrito "MES_ATUAL" Substitua "MES_ATUAL" por {date.today().month:02}, 
+        Caso esteja escrito "SEMANA_ATUAL" Substitua "SEMANA_ATUAL" por {date.today().isocalendar().week}, 
+        Caso esteja escrito "ULTIMO_DIA_UTIL" Substitua "ULTIMO_DIA_UTIL" por {ultimo_dia_util(date.today())}, 
+        Caso esteja escrito "DIA_ATUAL" Substitua "DIA_ATUAL" por {date.today().day:02}
+        Caso esteja escrito "SEM_PASSADO" Substitua "SEM_PASSADO" por {str(int(date.today().strftime('%m'))-1).zfill(2)};
+        Caso esteja escrito "LastUpdate" Formate as datas de 'LastUpdate' do procedimento em formato de 'dd/mm/yyyy', mantendo a mesma data.
         
-        Formate as datas de 'LastUpdate' dos indicadores em formato de 'dd/mm/yyyy', mantendo a data que se encontra na base de dados.
         Separe o passo a passo para atualizar o indicador em vários tópicos;
 """
     response = self.chat_session.send_message(message).text
