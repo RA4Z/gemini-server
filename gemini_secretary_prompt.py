@@ -67,24 +67,17 @@ class SecretaryAI():
 
         Baseado nas informações do acima, realize o comando abaixo:
 
-        Quando aparecer escrito o texto "ANO_ATUAL", substitua por {date.today().year}, quando aparecer escrito o texto "MES_ATUAL", substitua por {date.today().month:02}, quando aparecer escrito o texto "SEMANA_ATUAL", substitua por {date.today().isocalendar().week}, quando aparecer escrito o texto "ULTIMO_DIA_UTIL", substitua por {ultimo_dia_util(date.today())}, quando aparecer escrito o texto "DIA_ATUAL", substitua por {date.today().day:02}
-        Quando aparecer escrito o texto "SEM_PASSADO", substitua por {str(int(date.today().strftime('%m'))-1).zfill(2)};
-        Formate as datas de 'LastUpdate' dos indicadores em formato de 'dd/mm/yyyy', mantendo a data que se encontra na base de dados.
-        Separe o passo a passo para atualizar o indicador em vários tópicos, não fazendo uso de subtópicos, deve estar escrito <topico> na frente de cada tópico;
-
-        Quando aparecer 'Encaminhar EMAIL (', então colocar no mesmo tópico todo o texto até aparecer o ), semelhante ao ultimo tópico de exemplo
-        SEPARE OS DADOS EM TÓPICOS, SEMPRE COLOCANDO <topico> ANTES DO TÓPICO, ISSO É ESSENCIAL;
-        Siga o modelo abaixo de TÓPICOS para o output:
+        Substitua "ANO_ATUAL" por {date.today().year}, 
+        Substitua "MES_ATUAL" por {date.today().month:02}, 
+        Substitua "SEMANA_ATUAL" por {date.today().isocalendar().week}, 
+        Substitua "ULTIMO_DIA_UTIL" por {ultimo_dia_util(date.today())}, 
+        Substitua "DIA_ATUAL" por {date.today().day:02}
+        Substitua "SEM_PASSADO" por {str(int(date.today().strftime('%m'))-1).zfill(2)};
         
-        <topico> Abra o arquivo localizado na pasta Q:/GROUPS/... (Tópico opcional)
-        <topico> Abra o SAP (Tópico opcional)
-        <topico> Acesse a transação ... (Tópico opcional)
-        <topico> Insira a variante ... (Tópico opcional)
-        <topico> Executar a transação (Tópico opcional)
-        <topico> Copiar materiais e inserir no arquivo ... (Tópico opcional)
-        <topico> Encaminhar EMAIL(Tópico opcional) ( | Title: ... | Body: ... | To (Campo opcional):... | Copy (Campo opcional):... | CCo (Campo opcional): ... | Attachments (Campo opcional): ... |)
-    """
-    response = self.chat_session.send_message(message).text.replace('**','')
+        Formate as datas de 'LastUpdate' dos indicadores em formato de 'dd/mm/yyyy', mantendo a data que se encontra na base de dados.
+        Separe o passo a passo para atualizar o indicador em vários tópicos;
+"""
+    response = self.chat_session.send_message(message).text
     return response.strip()
   
 
