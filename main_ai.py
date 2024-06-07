@@ -16,7 +16,7 @@ user_ias = {}
 def process_message():
   message = request.form.get('message')
   username = request.form.get('username')
-
+  
   if message:
     # Crie um novo objeto GeminiAI se o usuário não existir
     if username not in user_ias:

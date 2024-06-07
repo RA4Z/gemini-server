@@ -10,11 +10,26 @@ path_rules = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/rules'
 path_docs = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/documents'
 path_procedures = '\\\\intranet.weg.net@SSL\\DavWWWRoot\\br\\energia-wm\\pcp\\Central de Arquivos'
 
+default_answers = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents\\default_answers.json', 'r', encoding='utf-8'))
 pathsPCP = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents\\Links_Uteis.json', 'r', encoding='utf-8'))
 agendaPCP = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents\\agenda.json', 'r', encoding='utf-8'))
 
 paths = [path_daily, path_weekly, path_monthly, path_procedures]
 historico = []
+
+for command in default_answers:
+    historico.append({
+        "role": "user",
+        "parts": [
+            command['input']
+        ]
+    })
+    historico.append({
+        "role": "model",
+        "parts": [
+            command['output']
+        ]
+    })
 
 #INSERIR INFORMAÇÕES DA AGENDA DO PCP, CRIADA PELA MARGUIT
 for path in pathsPCP:
