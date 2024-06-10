@@ -9,12 +9,15 @@ historico = [
     },
     {
       "role": "model",
-      "parts": ["EM/WEM é a filial da WEG, que se encontra nos Estados Unidos, normalmente(nem sempre) os arquivos relacionados a ela estão com o nome em inglês"]
+      "parts": ["EM/WEM é a filial da WEG, que se encontra nos Estados Unidos, normalmente(nem sempre) os arquivos "
+                "relacionados a ela estão com o nome em inglês"]
     },
 ]
 
-mapeamento = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\Central\\__Automaticos_Python\\06-find_fles\\mapeamento.json', 'r', encoding='utf-8'))
-inteligence = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\Central\\__Automaticos_Python\\06-find_fles\\inteligence.json', 'r', encoding='utf-8'))
+mapeamento = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\Central\\__Automaticos_Python\\06-find_fles'
+                            '\\mapeamento.json', 'r', encoding='utf-8'))
+inteligence = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\Central\\__Automaticos_Python\\06-find_fles'
+                             '\\inteligence.json', 'r', encoding='utf-8'))
 
 
 for item in mapeamento:

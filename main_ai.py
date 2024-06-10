@@ -12,66 +12,70 @@ CORS(app)
 # Dicionário para armazenar os objetos GeminiAI para cada usuário
 user_ias = {}
 
+
 @app.route('/gemini', methods=['POST'])
 def process_message():
-  message = request.form.get('message')
-  username = request.form.get('username')
-  
-  if message:
-    # Crie um novo objeto GeminiAI se o usuário não existir
-    if username not in user_ias:
-      user_ias[username] = GeminiAI() 
+    message = request.form.get('message')
+    username = request.form.get('username')
 
-    response = user_ias[username].send_message(message)
+    if message:
+        # Crie um novo objeto GeminiAI se o usuário não existir
+        if username not in user_ias:
+            user_ias[username] = GeminiAI()
 
-    try:
-      input_history(username, message, response)
-    except Exception as e:
-      print(str(e))
-      
-    return response
-  else:
-    return "Mensagem inválida", 400
+        response = user_ias[username].send_message(message)
+
+        try:
+            input_history(username, message, response)
+        except Exception as e:
+            print(str(e))
+
+        return response
+    else:
+        return "Mensagem inválida", 400
 
 
 @app.route('/quit', methods=['POST'])
 def quit_system():
-  username = request.form.get('username')
+    username = request.form.get('username')
 
-  if username in user_ias:
-    try:
-      del user_ias[username] 
-      return f'Usuário {username} deletado com sucesso!'
+    if username in user_ias:
+        try:
+            del user_ias[username]
+            return f'Usuário {username} deletado com sucesso!'
 
-    except Exception as e:
-      print(str(e))
+        except Exception as e:
+            print(str(e))
 
-  return 'Usuário inexistente'
+    return 'Usuário inexistente'
+
 
 @app.route('/search', methods=['POST'])
 def search_file():
-  search = SearchFoldersAI()
-  message = request.form.get('message')
+    search = SearchFoldersAI()
+    message = request.form.get('message')
 
-  if message:
-    response = search.send_message(message)
-    return response
-  
-  else:
-    return "Mensagem inválida", 400
-  
+    if message:
+        response = search.send_message(message)
+        return response
+
+    else:
+        return "Mensagem inválida", 400
+
+
 @app.route('/secretary', methods=['POST'])
 def search_secretary_procedure():
-  search = SecretaryAI()
-  path = request.form.get('path')
-  filename = request.form.get('filename')
+    search = SecretaryAI()
+    path = request.form.get('path')
+    filename = request.form.get('filename')
 
-  if filename:
-    response = search.send_message(path, filename)
-    return response
-  
-  else:
-    return "Mensagem inválida", 400
-  
+    if filename:
+        response = search.send_message(path, filename)
+        return response
+
+    else:
+        return "Mensagem inválida", 400
+
+
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)

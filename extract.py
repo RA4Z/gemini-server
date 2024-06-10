@@ -1,13 +1,12 @@
 from docx import Document
 
-class Dados():
-    def extrair_procedimento(self, filename:str):
-        try:
-            doc = Document(filename)
-            texto = "\n".join([paragraph.text for paragraph in doc.paragraphs])
-        except:
-            texto = ''
-            pass
 
-        return texto
-    
+def extrair_procedimento(filename: str):
+    try:
+        doc = Document(filename)
+        texto = "\n".join([paragraph.text for paragraph in doc.paragraphs])
+    except Exception as e:
+        texto = ''
+        print(e)
+
+    return texto
