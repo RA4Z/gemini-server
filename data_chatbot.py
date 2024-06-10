@@ -17,20 +17,6 @@ agendaPCP = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Proc
 paths = [path_daily, path_weekly, path_monthly, path_procedures]
 historico = []
 
-for command in default_answers:
-    historico.append({
-        "role": "user",
-        "parts": [
-            command['input']
-        ]
-    })
-    historico.append({
-        "role": "model",
-        "parts": [
-            command['output']
-        ]
-    })
-
 #INSERIR INFORMAÇÕES DA AGENDA DO PCP, CRIADA PELA MARGUIT
 for path in pathsPCP:
     historico.append({
@@ -111,3 +97,17 @@ for path in paths:
                 ]
             })
 
+
+for command in default_answers:
+    historico.append({
+        "role": "user",
+        "parts": [
+            command['input']
+        ]
+    })
+    historico.append({
+        "role": "model",
+        "parts": [
+            command['output']
+        ]
+    })

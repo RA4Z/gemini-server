@@ -1,13 +1,7 @@
 import google.generativeai as genai
-from datetime import date, datetime, timedelta
+from datetime import date
 from docx import Document
 import os
-
-def ultimo_dia_util(data):
-  data -= timedelta(days=1)
-  while data.weekday() >= 5:
-    data -= datetime.timedelta(days=1)
-  return datetime.strftime(data,'%d/%m/%Y')
 
 def extrair_procedimento(filename:str):
     try:
@@ -71,7 +65,6 @@ class SecretaryAI():
         Caso esteja escrito "ANO_ATUAL" Substitua "ANO_ATUAL" por {date.today().year}, 
         Caso esteja escrito "MES_ATUAL" Substitua "MES_ATUAL" por {date.today().month:02}, 
         Caso esteja escrito "SEMANA_ATUAL" Substitua "SEMANA_ATUAL" por {date.today().isocalendar().week}, 
-        Caso esteja escrito "ULTIMO_DIA_UTIL" Substitua "ULTIMO_DIA_UTIL" por {ultimo_dia_util(date.today())}, 
         Caso esteja escrito "DIA_ATUAL" Substitua "DIA_ATUAL" por {date.today().day:02}
         Caso esteja escrito "SEM_PASSADO" Substitua "SEM_PASSADO" por {str(int(date.today().strftime('%m'))-1).zfill(2)};
         Caso esteja escrito "LastUpdate" Formate as datas de 'LastUpdate' do procedimento em formato de 'dd/mm/yyyy', mantendo a mesma data.
