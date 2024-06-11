@@ -17,12 +17,13 @@ user_ias = {}
 def process_message():
     message = request.form.get('message')
     username = request.form.get('username')
-
+    if 'SITE' in username: username = request.remote_addr
+    
     if message:
         # Crie um novo objeto GeminiAI se o usuário não existir
         if username not in user_ias:
             user_ias[username] = GeminiAI()
-
+          
         response = user_ias[username].send_message(message)
 
         try:
@@ -38,6 +39,7 @@ def process_message():
 @app.route('/quit', methods=['POST'])
 def quit_system():
     username = request.form.get('username')
+    if 'SITE' in username: username = request.remote_addr
 
     if username in user_ias:
         try:

@@ -10,7 +10,7 @@ def ultimo_dia_util(data):
 
 
 def input_history(name: str, text_input: str, output: str):
-    if name != 'robertn':
+    if name != 'robertn' and name != '10.1.43.24':
         indicadores = json.load(
             open('Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/documents/inputs_history.json', 'r',
                  encoding='utf-8'))
