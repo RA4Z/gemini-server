@@ -1,4 +1,4 @@
-from extract import extrair_procedimento
+from extract import extrair_info
 import json
 import os
 
@@ -7,7 +7,9 @@ path_weekly = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secret
 path_monthly = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/ppc_secretary/monthly'
 path_rules = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/rules'
 path_docs = 'Q:/GROUPS/BR_SC_JGS_WM_LOGISTICA/PCP/PPC_AI_Procedures/documents'
+
 path_procedures = '\\\\intranet.weg.net@SSL\\DavWWWRoot\\br\\energia-wm\\pcp\\Central de Arquivos'
+path_pcr = '\\\\intranet.weg.net@SSL\\DavWWWRoot\\br\\energia-wm\\pcp\\PCR'
 
 default_answers = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents'
                                  '\\default_answers.json', 'r', encoding='utf-8'))
@@ -19,7 +21,7 @@ agendaPCP = json.load(
 transacoesWEG = json.load(open('Q:\\GROUPS\\BR_SC_JGS_WM_LOGISTICA\\PCP\\PPC_AI_Procedures\\documents\\TRANSAÇÕES-WEG'
                                '.json', 'r', encoding='utf-8'))
 
-paths = [path_daily, path_weekly, path_monthly, path_procedures]
+paths = [path_daily, path_weekly, path_monthly, path_procedures, path_pcr]
 historico = []
 
 # INSERIR INFORMAÇÕES DA AGENDA DO PCP, CRIADA PELA MARGUIT
@@ -69,50 +71,50 @@ for seq in agendaPCP:
 
 # NORMAS TRANSCRITAS
 for filename in os.listdir(path_rules):
-    if filename.endswith(".docx"):
+    if filename.endswith(".docx") or filename.endswith(".pdf"):
         historico.append({
             "role": "user",
             "parts": [
-                f"Texto em extenso para a Norma {filename.replace('.docx', '')}"
+                f"Texto em extenso para a Norma {filename.replace('.docx', '').replace('.pdf', '')}"
             ]
         })
         historico.append({
             "role": "model",
             "parts": [
-                extrair_procedimento(f'{path_rules}/{filename}'),
+                extrair_info(f'{path_rules}/{filename}'),
             ]
         })
 
 # DOCUMENTOS PCP
 for filename in os.listdir(path_docs):
-    if filename.endswith(".docx"):
+    if filename.endswith(".docx") or filename.endswith(".pdf"):
         historico.append({
             "role": "user",
             "parts": [
-                f"Documento em extenso sobre {filename.replace('.docx', '')}"
+                f"Documento em extenso sobre {filename.replace('.docx', '').replace('.pdf', '')}"
             ]
         })
         historico.append({
             "role": "model",
             "parts": [
-                extrair_procedimento(f'{path_docs}/{filename}'),
+                extrair_info(f'{path_docs}/{filename}'),
             ]
         })
 
 # INSERIR PROCEDIMENTOS E DOCUMENTOS WORD
 for path in paths:
     for filename in os.listdir(path):
-        if filename.endswith(".docx"):
+        if filename.endswith(".docx") or filename.endswith(".pdf"):
             historico.append({
                 "role": "user",
                 "parts": [
-                    f"Procedimento em extenso para {filename.replace('.docx', '')}"
+                    f"Procedimento em extenso para {filename.replace('.docx', '').replace('.pdf', '')}"
                 ]
             })
             historico.append({
                 "role": "model",
                 "parts": [
-                    f"{extrair_procedimento(f'{path}/{filename}')} o procedimento se encontra em {path}/{filename}",
+                    f"{extrair_info(f'{path}/{filename}')} o procedimento se encontra em {path}/{filename}",
                 ]
             })
 
