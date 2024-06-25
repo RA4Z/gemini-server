@@ -14,7 +14,7 @@ def replace_strings(actual: str, turns: bool):
     for item in replace_list:
         if item["actual"] == actual:
             if not turns:
-                return item["new"]
+                return f'{item["new"]}*'
             else:
                 return f'{item["new"]} Turns'
     return None

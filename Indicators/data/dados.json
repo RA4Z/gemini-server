@@ -1,6 +1,6 @@
 [
     {
-        "Concatenar": "Global Total Inventory",
+        "Concatenar": "Global Total Inventory*",
         "Branch": "GLOBAL",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -112,7 +112,7 @@
         ]
     },
     {
-        "Concatenar": "JGS Total Inventory",
+        "Concatenar": "JGS Total Inventory*",
         "Branch": "JGS",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -224,7 +224,7 @@
         ]
     },
     {
-        "Concatenar": "WSB Total Inventory",
+        "Concatenar": "WSB Total Inventory*",
         "Branch": "WSB",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -336,7 +336,7 @@
         ]
     },
     {
-        "Concatenar": "HISA Total Inventory",
+        "Concatenar": "HISA Total Inventory*",
         "Branch": "HISA",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -448,7 +448,7 @@
         ]
     },
     {
-        "Concatenar": "EOL Total Inventory",
+        "Concatenar": "EOL Total Inventory*",
         "Branch": "EOL",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -560,7 +560,7 @@
         ]
     },
     {
-        "Concatenar": "WII Total Inventory",
+        "Concatenar": "WII Total Inventory*",
         "Branch": "WII",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -672,7 +672,7 @@
         ]
     },
     {
-        "Concatenar": "WEM Total Inventory",
+        "Concatenar": "WEM Total Inventory*",
         "Branch": "WEM",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -784,7 +784,7 @@
         ]
     },
     {
-        "Concatenar": "WNT Total Inventory",
+        "Concatenar": "WNT Total Inventory*",
         "Branch": "WNT",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -896,7 +896,7 @@
         ]
     },
     {
-        "Concatenar": "WPT Total Inventory",
+        "Concatenar": "WPT Total Inventory*",
         "Branch": "WPT",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -1008,7 +1008,7 @@
         ]
     },
     {
-        "Concatenar": "KANNIS Total Inventory",
+        "Concatenar": "KANNIS Total Inventory*",
         "Branch": "KANNIS",
         "Year": 2024,
         "KPIs": "Inventory",
@@ -1120,7 +1120,7 @@
         ]
     },
     {
-        "Concatenar": "Brasil Total Inventory",
+        "Concatenar": "Brasil Total Inventory*",
         "Branch": "BRASIL",
         "Year": 2024,
         "KPIs": "Inventory",

@@ -19,7 +19,8 @@ update()
 def process_message():
     message = request.form.get('message')
     username = request.form.get('username')
-    if 'SITE' in username: username = request.remote_addr
+    if 'SITE' in username:
+        username = request.remote_addr
     
     if message:
         # Crie um novo objeto GeminiAI se o usuário não existir
@@ -41,7 +42,8 @@ def process_message():
 @app.route('/quit', methods=['POST'])
 def quit_system():
     username = request.form.get('username')
-    if 'SITE' in username: username = request.remote_addr
+    if 'SITE' in username:
+        username = request.remote_addr
 
     if username in user_ias:
         try:
