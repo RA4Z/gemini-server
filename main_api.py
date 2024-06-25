@@ -2,16 +2,18 @@ from gemini_chatbot import GeminiAI
 from gemini_search_folders import SearchFoldersAI
 from gemini_secretary_prompt import SecretaryAI
 
+import json
 from functions import input_history
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
+from update_indicators import update
 
 app = Flask(__name__)
 CORS(app)
 
 # Dicionário para armazenar os objetos GeminiAI para cada usuário
 user_ias = {}
-
+update()
 
 @app.route('/gemini', methods=['POST'])
 def process_message():
@@ -77,6 +79,34 @@ def search_secretary_procedure():
 
     else:
         return "Mensagem inválida", 400
+
+
+@app.route('/wen_indicators')
+def get_wen_indicators():
+    try:
+        data = json.load(open("indicators/data/indicadores.json", "r", encoding="utf-8"))
+        return jsonify(data)
+    except Exception as e:
+        print(str(e))
+        return []
+
+@app.route('/wen_database')
+def get_wen_database():
+    try:
+        data = json.load(open("indicators/data/dados.json", "r", encoding="utf-8"))
+        return jsonify(data)
+    except Exception as e:
+        print(str(e))
+        return []
+
+@app.route('/update')
+def update_api():
+    try:
+        update()
+        return
+    except Exception as e:
+        print(str(e))
+        return
 
 
 if __name__ == "__main__":

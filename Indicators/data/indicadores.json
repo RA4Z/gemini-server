@@ -1,0 +1,53 @@
+[
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "indicadores": [
+            "JGS Total Inventory",
+            "JGS Total Inventory Turns",
+            "WSB Total Inventory",
+            "WSB Total Inventory Turns",
+            "HISA Total Inventory",
+            "HISA Total Inventory Turns",
+            "EOL Total Inventory",
+            "EOL Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "United States",
+        "country": "Estados Unidos",
+        "indicadores": [
+            "WEM Total Inventory",
+            "WEM Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "India",
+        "country": "Índia",
+        "indicadores": [
+            "WII Total Inventory",
+            "WII Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "South Africa",
+        "country": "África do Sul",
+        "indicadores": []
+    },
+    {
+        "id": "Portugal",
+        "country": "Portugal",
+        "indicadores": [
+            "WPT Total Inventory",
+            "WPT Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "China",
+        "country": "China",
+        "indicadores": [
+            "WNT Total Inventory",
+            "WNT Total Inventory Turns"
+        ]
+    }
+]

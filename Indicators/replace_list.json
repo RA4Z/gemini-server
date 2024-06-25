@@ -1,6 +1,50 @@
 [
-  {
-    "actual": "Stocks JGSTotal",
-    "new": "Stocks JGS Total Inventory"
-  }
+    {
+        "actual": "Stocks GLOBALTotal",
+        "new": "Global Total Inventory"
+    },
+    {
+        "actual": "Stocks BRASILTotal",
+        "new": "Brasil Total Inventory"
+    },
+    {
+        "actual": "Stocks JGSTotal",
+        "new": "JGS Total Inventory"
+    },
+    {
+        "actual": "Stocks WSBTotal",
+        "new": "WSB Total Inventory"
+    },
+    {
+        "actual": "Stocks HISATotal",
+        "new": "HISA Total Inventory"
+    },
+    {
+        "actual": "Stocks TMGTotal",
+        "new": "TGM Total Inventory"
+    },
+    {
+        "actual": "Stocks EOLTotal",
+        "new": "EOL Total Inventory"
+    },
+    {
+        "actual": "Stocks WIITotal",
+        "new": "WII Total Inventory"
+    },
+    {
+        "actual": "Stocks WEMTotal",
+        "new": "WEM Total Inventory"
+    },
+    {
+        "actual": "Stocks WNTTotal",
+        "new": "WNT Total Inventory"
+    },
+    {
+        "actual": "Stocks WPTTotal",
+        "new": "WPT Total Inventory"
+    },
+    {
+        "actual": "Stocks KANNISTotal",
+        "new": "KANNIS Total Inventory"
+    }
 ]

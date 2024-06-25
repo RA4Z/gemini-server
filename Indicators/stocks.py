@@ -1,6 +1,6 @@
 import json
 import openpyxl
-from format_stocks import formatar_json
+from Indicators.format_stocks import formatar_json
 
 class Excel:
     def __init__(self, file: str):
@@ -26,10 +26,9 @@ class Excel:
                 return col
         return 0
 
-
-if __name__ == "__main__":
+def atualizar_stocks():
     arquivo = ("\\\\intranet.weg.net@SSL\\DavWWWRoot\\br\\energia-wm\\pcp\\Comisso de Estoques\\Gráficos de giro de "
-               "estoque\\CopyInventory.xlsm")
+               "estoque\\InventoryManagement_ENERGIA 2024 .xlsm")
     excel = Excel(arquivo)
     rows = excel.count_rows(1)
     columns = excel.count_columns(1)
@@ -45,7 +44,11 @@ if __name__ == "__main__":
 
     data = formatar_json(data)
 
-    with open("data/dados.json", "w", encoding="utf-8") as json_file:
+    with open("Indicators/data/dados.json", "w", encoding="utf-8") as json_file:
         json.dump(data, json_file, ensure_ascii=False, indent=4)
 
     print("Arquivo JSON gerado com sucesso: dados.json")
+
+
+if __name__ == "__main__":
+    atualizar_stocks()
