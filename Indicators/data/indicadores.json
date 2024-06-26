@@ -1,14 +1,59 @@
 [
     {
+        "id": "Global",
+        "country": "Global",
+        "empresa": "GLOBAL",
+        "indicadores": [
+            "Global Total Inventory*",
+            "Global Total Inventory Turns",
+            "Global Raw Material Inventory*",
+            "Global Raw Material Inventory Turns",
+            "Global Work in Process Inventory*",
+            "Global Work in Process Inventory Turns",
+            "Global Finished Good Inventory*",
+            "Global Finished Good Inventory Turns",
+            "Global sem KANNIS Total Inventory*",
+            "Global sem KANNIS Total Inventory Turns",
+            "Global sem KANNIS Raw Material Inventory*",
+            "Global sem KANNIS Raw Material Inventory Turns",
+            "Global sem KANNIS Work in Process Inventory*",
+            "Global sem KANNIS Work in Process Inventory Turns",
+            "Global sem KANNIS Finished Good Inventory*",
+            "Global sem KANNIS Finished Good Inventory Turns"
+        ]
+    },
+    {
         "id": "Brazil",
         "country": "Brasil",
+        "empresa": "JGS",
         "indicadores": [
             "JGS Total Inventory*",
-            "JGS Total Inventory Turns",
+            "JGS Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "WSB",
+        "indicadores": [
             "WSB Total Inventory*",
-            "WSB Total Inventory Turns",
+            "WSB Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "HISA",
+        "indicadores": [
             "HISA Total Inventory*",
-            "HISA Total Inventory Turns",
+            "HISA Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "EOL",
+        "indicadores": [
             "EOL Total Inventory*",
             "EOL Total Inventory Turns"
         ]
@@ -16,6 +61,7 @@
     {
         "id": "United States",
         "country": "Estados Unidos",
+        "empresa": "WEM",
         "indicadores": [
             "WEM Total Inventory*",
             "WEM Total Inventory Turns"
@@ -24,6 +70,7 @@
     {
         "id": "India",
         "country": "Índia",
+        "empresa": "WII",
         "indicadores": [
             "WII Total Inventory*",
             "WII Total Inventory Turns"
@@ -37,6 +84,7 @@
     {
         "id": "Portugal",
         "country": "Portugal",
+        "empresa": "WPT",
         "indicadores": [
             "WPT Total Inventory*",
             "WPT Total Inventory Turns"
@@ -45,9 +93,19 @@
     {
         "id": "China",
         "country": "China",
+        "empresa": "WNT",
         "indicadores": [
             "WNT Total Inventory*",
             "WNT Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "Germany",
+        "country": "Alemanha",
+        "empresa": "KANNIS",
+        "indicadores": [
+            "KANNIS Total Inventory*",
+            "KANNIS Total Inventory Turns"
         ]
     }
 ]
